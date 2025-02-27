@@ -68,7 +68,7 @@ It can more simply be accessed from here:
 
 The first five rows of the dataset are shown below:
 
-![Dataset](https://github.com/AegisZoom/Forensic-Glass-Models/blob/Add-Files/Images/Dataset.PNG)
+![Dataset](https://github.com/AegisZoom/Forensic-Glass-Models/blob/main/Images/Dataset.PNG)
 
 In short, the *Refractive Index* column measures the ability for the glass samples to bend light, and the columns containing the *%* character measure the proportion of oxides that contain that specific element. 
 *Na %* for example specifies the proportion of Sodium Oxide formed on the surface of the glass sample. You can refer to the Periodic Table of Elements to see which letter corresponds to which chemical element.
@@ -95,7 +95,7 @@ A large number of visualisations were constructed to explore trends and relation
 
 ### Example 1: Refractive Index Histogram
 
-![Histogram](https://github.com/AegisZoom/Forensic-Glass-Models/blob/Add-Files/Images/RI_Histogram.PNG)
+![Histogram](https://github.com/AegisZoom/Forensic-Glass-Models/blob/main/Images/RI_Histogram.PNG)
 
 The above histogram was constructed to develop intuition for the spread of refractive indexes across the dataset. Paying attention to the scale of the x-axis, it is clear that
 the refractive index between samples changes minimally, but does center around a value of 1.5184. The narrowness of the distribution and the presence of outliers opens the possibility that
@@ -103,7 +103,7 @@ the refractive index may be altered by the chemical composition of the glass, wh
 
 ### Example 2: (MgO %) vs (Type of Glass) Box Plot
 
-![Box](https://github.com/AegisZoom/Forensic-Glass-Models/blob/Add-Files/Images/MgO_Box.PNG)
+![Box](https://github.com/AegisZoom/Forensic-Glass-Models/blob/main/Images/MgO_Box.PNG)
 
 The next step would then be to confirm if the purpose of the glassware affects chemical composition. Different glassware may require techniques to temper them against
 blunt force for example. The box plot was selected as it is highly effective at comparing distributions of continuous variables between
@@ -111,7 +111,7 @@ classifications. For MgO specifically, it is shown to increase in presence on wi
 
 ### Example 3: (CaO %) vs (Refractive Index) Scatter Plot
 
-![Scatter](https://github.com/AegisZoom/Forensic-Glass-Models/blob/Add-Files/Images/CaO_Scatter.PNG)
+![Scatter](https://github.com/AegisZoom/Forensic-Glass-Models/blob/main/Images/CaO_Scatter.PNG)
 
 Now that it is shown that refractive indexes are prone to variance, and that different glassware contains different chemical compositions, the final step is to assess
 links between chemical composition and refractive index. This scatter plot paints a clear relationship between Calcium presence and the refractive index of glass.
@@ -124,7 +124,7 @@ between the training and testing sets to promote fairness in the model performan
 
 ### k-Nearest Neighbours Classifier
 
-![kNN](https://github.com/AegisZoom/Forensic-Glass-Models/blob/Add-Files/Images/kNN.PNG)
+![kNN](https://github.com/AegisZoom/Forensic-Glass-Models/blob/main/Images/kNN.PNG)
 
 This model used parameters of k = 1 and p = 1, where k = 1 means the model will classify each data point to that of the closest training data point in higher-dimension coordinate space, instead of an average of the nearest two or three. 
 The abstract distance between data points is calculated using the Minkowski formula: 
@@ -136,7 +136,7 @@ recall improved by 3% and precision improved by 1% as a result.
 
 ### Decision Tree Classifier
 
-![DT](https://github.com/AegisZoom/Forensic-Glass-Models/blob/Add-Files/Images/DT.PNG)
+![DT](https://github.com/AegisZoom/Forensic-Glass-Models/blob/main/Images/DT.PNG)
 
 This classifier was optimised by pruning the number of decisions it could make to reach a classification. The decision tree model could at the maximum filter data seven times to a total of twelve potential outcomes, 
 forming seven classifications. This optimisation lead to great increases in accuracy, precision, and recall compared to the models that used the default parameters largely due to correcting the overfitting behaviour. 
