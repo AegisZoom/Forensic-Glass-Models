@@ -118,9 +118,8 @@ links between chemical composition and refractive index. This scatter plot paint
 
 ## Data Modelling
 
-The final step was to construct classification models using the requisite knowledge earned in the previous step. Several k-Nearest Neighbours and Decision Tree models were
-constructed for comparison using this data. The performance of the two final models for each type will be shown below. Models were trained using 60% of the data available,
-while the remaining 40% were used for testing. The training and testing data samples were stratified by their classification, that way each glass category had a 60:40 split
+The final step was to construct classification models using the requisite knowledge earned in the previous step. The performance of the two best classification models are shown below. Models were trained using 60% of the data available,
+while the remaining 40% were used for testing. The training and testing data samples were stratified by their classification, that way each sample category had a 60:40 split
 between the training and testing sets to promote fairness in the model performance.
 
 ### k-Nearest Neighbours Classifier
@@ -132,26 +131,28 @@ The abstract distance between data points is calculated using the Minkowski form
 
 $$dist(x, y) = \left(\sum_{i=1}^n |x_i-y_i|^p \right)$$<sup>1/p</sup>
 
-As a general rule of thumb, models using data points in higher dimensions than three (such as (2, 1, 3, 4) which is 4D) work best with p = 1. This theoretical notion was supported by model evaluation between different p-values. The more
-interesting thing however are the features selected: model performance (in overally accuracy, recall, and precision) was improved by ignored the *Na %* and *Ba %* variables of the dataset. But this was worth it, as accuracy improved by 3%, 
-recall improved by 3% and precision improved by 1%.
+Generally, models using data points in dimensions greater than 3 (such as (2, 1, 3, 4), which is 4-dimensional) work best with p = 1. In addition, model performance (in overall accuracy, recall, and precision) was improved by ignoring the *Na %* and *Ba %* variables of the dataset. The accuracy improved by 3%, 
+recall improved by 3% and precision improved by 1% as a result.
 
 ### Decision Tree Classifier
 
 ![DT](https://github.com/AegisZoom/Forensic-Glass-Models/blob/Add-Files/Images/DT.PNG)
 
-This classifier was optimised by pruning the number of decisions it could make to reach a classification. The decision tree model could at the maximum filter data seven times until a classification would be assigned, a total of twelve potential outcomes
-could be generated based on the training data used to produce seven classifications. This optimisation lead to great increases in accuracy, precision, and recall compared to the models that used the default parameters largely due to correcting the overfitting behaviour. 
+This classifier was optimised by pruning the number of decisions it could make to reach a classification. The decision tree model could at the maximum filter data seven times to a total of twelve potential outcomes, 
+forming seven classifications. This optimisation lead to great increases in accuracy, precision, and recall compared to the models that used the default parameters largely due to correcting the overfitting behaviour. 
 Unfortunately, the decision tree classifiers cannot compete with the k-Nearest Neighbours classifiers. This is not surprising however, as decision trees struggle with continuous variables.
-
-Thus the objective of the project was completed. The forensic glass dataset was analysed for trends and relationships, and two classifier models were developed. Both achieved accuracies above 80.0%, however the k-Nearest Neighbours Classifier
-outperformed the Decision Tree model. In my report, I provide significant commentary explaining some of the noteworthy properties of the variables and model parameters in the discussion section.
 
 ## Files, Folders and Specifications
 
+In this repository, *4081442.zip* contains the *Assignment2.ipynb*, *report.pdf*, *glass.csv*, and *readme.txt* files, which was the format used for submission.
 
+The *Assignment2.ipynb* file contains all code produced for the purpose of this assessment in the Markdown format. As a result, there is significant commentary provided at all stages of the file to inform readers.  It is not recommened to re-run the notebook, as it is computationally intensive.
+Because this project was completed recently, the code should operate smoothly with current versions of Python, Jupyter, and the relevant libraries.
 
+The *report.pdf* file is the 12-page report discussing all outputs of the code, and all the steps above in complete detail. Any questions about my work would likely be answered in this extensive document.
 
+The *readme.txt* file provides information on running and reproducing the outputs for new users.
 
+The *glass.csv* file contains the dataset used for the purpose of this assessment.
 
-
+The *Images* folder houses all images used to construct this page.
