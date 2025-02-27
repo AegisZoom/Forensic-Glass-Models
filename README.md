@@ -122,6 +122,39 @@ relationships is crucial to selected model features to avoid issues: ideally eac
 ## Data Modelling
 
 The final step was to construct classification models using the requisite knowledge earned in the previous step. Several k-Nearest Neighbours and Decision Tree models were
-constructed for comparison using this data. The performance of the two final models for each type will be shown below. These were found using 
+constructed for comparison using this data. The performance of the two final models for each type will be shown below. Models were trained using 60% of the data available,
+while the remaining 40% were used for testing. The training and testing data samples were stratified by their classification, that way each glass category had a 60:40 split
+between the training and testing sets to promote fairness in the model performance.
+
+### k-Nearest Neighbours Classifier
+
+![kNN](https://github.com/AegisZoom/Forensic-Glass-Models/blob/Add-Files/Images/kNN.PNG)
+
+This model used parameters of k = 1 and p = 1, where k = 1 means the model will classify each data point to that of the closest training data point in higher-dimension coordinate space, instead of an average of the nearest two or three. 
+The abstract distance between data points is calculated using the Minkowski formula: 
+
+$$dist(x, y) = \left(\sum_{i=1}^n |x_i-y_i|^p \right)$$<sup>1/p</sup>
+
+As a general rule of thumb, models using data points in higher dimensions than three (such as (2, 1, 3, 4) which is 4D) work best with p = 1. This theoretical notion was supported by model evaluation between different p-values. The more
+interesting thing however are the features selected: model performance (in overally accuracy, recall, and precision) was improved by ignored the *Na %* and *Ba %* variables of the dataset. But this was worth it, as accuracy improved by 3%, 
+recall improved by 3% and precision improved by 1%.
+
+### Decision Tree Classifier
+
+![DT](https://github.com/AegisZoom/Forensic-Glass-Models/blob/Add-Files/Images/DT.PNG)
+
+This classifier was optimised by pruning the number of decisions it could make to reach a classification. The decision tree model could at the maximum filter data seven times until a classification would be assigned, a total of twelve potential outcomes
+could be generated based on the training data used to produce seven classifications. This optimisation lead to great increases in accuracy, precision, and recall compared to the models that used the default parameters largely due to correcting the overfitting behaviour. 
+Unfortunately, the decision tree classifiers cannot compete with the k-Nearest Neighbours classifiers. This is not surprising however, as decision trees struggle with continuous variables.
+
+Thus the objective of the project was completed. The forensic glass dataset was analysed for trends and relationships, and two classifier models were developed. Both achieved accuracies above 80.0%, however the k-Nearest Neighbours Classifier
+outperformed the Decision Tree model. In my report, I provide significant commentary explaining some of the noteworthy properties of the variables and model parameters in the discussion section.
+
+## Files, Folders and Specifications
+
+
+
+
+
 
 
