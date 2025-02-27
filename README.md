@@ -80,10 +80,48 @@ Therefore, the objective of the assessment is to construct machine learning mode
 
 The following procedures were applied to check for data quality. Generously, the dataset was already cleaned but it was worthwhile to perform these operations for certainty.
 
-- **Datatypes**: Checked that each variable was assigned the correct data type. This was true.
+- **Datatypes**: Checked that each variable was assigned the correct data type. All variables consisting of whole numbers were integers, and the rest using decimal numbers were floats.
+- **Missing Values**: Checked whether there were any missing values in each column. If there were any in the *%* columns for example, they could be imputed from knowing that
+the sum of each row of percentages must be 100%.
+- **Outliers**: Checked for theoretically possible values that might draw suspicion, including IDs greater than the number of samples and refractive index values of 1.
+- **Duplicates**: Checked for duplicate IDs.
+- **Multivariate Inconsistency**: Checked that the sum of each *%* value in the same column was 100%, while allowing leeway for rounding errors.
+- **Impossible Values**: Checked for negative IDs and percentages. Checked for percentages above 100%, refractive indexes below 1 (not physically possible), and
+undefined values in the *Type of Glass* variable.
 
 ## Data Exploration Examples
 
 A large number of visualisations were constructed to explore trends and relationships in the data. Only a few will be listed here, but the report and especially the Jupyter Notebook feature more data visualisations.
 
-### Example 1: 
+### Example 1: Refractive Index Histogram
+
+![Histogram](https://github.com/AegisZoom/Forensic-Glass-Models/blob/Add-Files/Images/RI_Histogram.PNG)
+
+The above histogram was constructed to develop intuition for the spread of refractive indexes across the dataset. Paying attention to the scale of the x-axis, it is clear that
+the refractive index between samples changes minimally, but does center around a value of 1.5184. These small changes and the presence of outliers open the possibility that
+the refractive index may be altered by the chemical composition of the glass, which is determine by its manufacturing process and therefore its purpose. It shows promise for
+classifying the glass samples. Similar histograms were developed for other variables.
+
+### Example 2: MgO % Box Plot
+
+![Box](https://github.com/AegisZoom/Forensic-Glass-Models/blob/Add-Files/Images/MgO_Box.PNG)
+
+The next step would then be to determine if the purpose of the glassware affects chemical composition. Different glassware may require techniques to temper them again
+blunt force, so this was an avenue worth pursuing. the box plot was selected as it is highly effective at comparing distributions of continuous variables between
+classifications. For MgO specifically, it is shown to increase in presence on window glassware. It therefore seems Magnesium is added to reinforce glass strength, or
+for some other purpose important for windows specifically. Similar box plots were developed for the other oxides.
+
+### Example 3: CaO % Scatter Plot
+
+![Scatter](https://github.com/AegisZoom/Forensic-Glass-Models/blob/Add-Files/Images/CaO_Scatter.PNG)
+
+Now that it is shown that refractive indexes are prone to variance, and that different glassware contains different chemical compositions, the final step is to assess
+links between chemical composition and refractive index. This scatter plot paints a clear relationship between Calcium presence and the refractive of glass. Identification of
+relationships is crucial to selected model features to avoid issues: ideally each model feature/variable should be independent of each other.
+
+## Data Modelling
+
+The final step was to construct classification models using the requisite knowledge earned in the previous step. Several k-Nearest Neighbours and Decision Tree models were
+constructed for comparison using this data. The performance of the two final models for each type will be shown below. These were found using 
+
+
