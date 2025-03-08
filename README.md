@@ -21,7 +21,7 @@ For the purpose of the assignment, I had to select one of four potential project
 I selected the forensic glass sample dataset as it seemed the most intuitive of the four choices. In the upcoming
 sections, I will explain how I applied this dataset to create classifiers that could predict the object associated
 with a glass sample (e.g. windows, tableware, headlamps) based on the associated material properties with good accuracy. 
-This page will provide a summary, but the 12-page report file details all procedures taken to executing this
+This page will provide a summary, but the 12-page pdf report details all procedures taken to executing this
 project with extensive commentary on the results.
 
 ## Skills Used
