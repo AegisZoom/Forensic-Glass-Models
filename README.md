@@ -61,10 +61,15 @@ Used my extensive background knowledge in physics and chemistry to guide the lit
 As explained above, the purpose of this assessment was to create classification models for forensic glass data to classify them based on their material properties.
 The following public dataset was used:
 
-German, B. (1987). *Glass Identification*. UCI Machine Learning Repository. [https://doi.org/10.24432/C5WW2P](https://doi.org/10.24432/C5WW2P)
+German, B. (1987). *Glass Identification* [Dataset]. UCI Machine Learning Repository. [https://doi.org/10.24432/C5WW2P](https://doi.org/10.24432/C5WW2P)
 
 It can more simply be accessed from here:
 [https://archive.ics.uci.edu/dataset/42/glass+identification](https://archive.ics.uci.edu/dataset/42/glass+identification) 
+
+*This dataset was shared without modification, and no file in this repository is able to execute permanent modifications to the dataset in place of the original.
+This dataset was shared and applied under the **Creative Commons Attribution 4.0 International License**, which can be accessed in the following link: 
+[https://creativecommons.org/licenses/by/4.0/](https://creativecommons.org/licenses/by/4.0/)*
+
 
 The first five rows of the dataset are shown below:
 
